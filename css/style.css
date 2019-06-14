@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #000;
+	background: #fff;
+	overflow: hidden;
+	font-size: 0.85rem;
+}
+
+img {
+ display: flex;
+ margin-left: auto;
+ margin-right: auto;
+ width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #777;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+
+/* Content */
+.content {
+	padding: 3em 0;
+}
+
+.content.main {
+	min-height: 100vh;
+	padding: 0;
+}
+
+.canvas-wrapper {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(0%, 0%);
+	transform: translate(-50%, -50%);
+	width: 1000px;
+	height: 1000px;
+	z-index: -1;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+
+.toggle-btn {
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: currentColor;
+	position: fixed;
+	bottom: 2vmax;
+	border: 1px solid;
+	width: 255px;
+	z-index:1;
+}
+
+
+.toggle-btn {
+	background: transparent;
+	color: currentColor;
+	right: 40vmax;
+}
+
+.toggle-btn:focus {
+	outline: none;
+}
+
+.toggle-btn:hover {
+	color: #777;
+}
+
+.txt-note {
+	padding: 10px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	color: currentColor;
+	position: fixed;
+	text-align:left;
+	border: 1px solid;
+	width: 75vmax;
+}
+
+
+.txt-note {
+	background: transparent;
+	color: currentColor;
+	float: right;
+	margin: 10vmax;
+  top: 2.5vmax;
+	left: 2.5vmax;
+
+}
+
+.txt-note:focus {
+	outline: none;
+}
+
+.txt-note:hover {
+	color: #fff;
+}
+
+.hc-img {
+	width: 35vmax;
+	height: 35vmax;
+	float:left;
+	position: fixed;
+	border: 1px solid;
+	left: 30vmax;
+  top: 50vmax;
+	bottom: 5vmax;
+
+}
+
+.att {
+	text-align: right;
+}
+
+#star-five { margin: 50px 0; 
+position: relative; 
+display: block; 
+color: white; 
+width: 0px;
+ height: 0px;
+ border-right: 100px solid transparent; 
+border-bottom: 70px solid white;
+ border-left: 100px solid transparent;
+ transform: rotate(35deg); 
+ top: 45vh;
+ left: 45vw;
+} 
+
+#star-five:before 
+{ border-bottom: 80px solid white;
+ border-left: 30px solid transparent;
+ border-right: 30px solid transparent;
+ position: absolute;
+ height: 0;
+ width: 0; 
+ top: -45px;
+ left: -65px; 
+ display: block; content: '';
+ transform: rotate(-35deg); } 
+
+#star-five:after 
+{ position: absolute; 
+display: block; 
+color: white; 
+top: 3px;
+ left: -105px;
+ width: 0px;
+ height: 0px; 
+border-right: 100px solid transparent;
+ border-bottom: 70px solid white;
+ border-left: 100px solid transparent; 
+transform: rotate(-70deg); 
+content: ''; }
+
+@media screen and (max-width: 55em) {
+
+
+	.toggle-btn {
+		right: 10px;
+		bottom: 10px;
+		width: calc(100% - 20px);
+	}
+
+	.lds-ripple {
+		width: 15vmax;
+	  height: 15vmax;
+		left: 45vw;
+		top: 45vh;
+	}
+
+
+	.hc-img {
+		left: 10px;
+		top: 10px;
+		width: 300px;
+		height: 300px;
+
+
+}
+
+	.txt-note {
+		 visibility: hidden;
+		 position: absolute;
+		 overflow: scroll;
+		 width: 0;
+		 height: 0;
+		 pointer-events: none;
+}
